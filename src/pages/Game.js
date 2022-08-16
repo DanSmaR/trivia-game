@@ -151,10 +151,8 @@ class Game extends Component {
         <div data-testid="answer-options">
           {
             results[activeIndex].sortedAnswersList.map((answer, indexAnswer) => {
-              if (answer === correctAnswer) {
-                return this.renderBtn(true, answer, indexAnswer, validAnswerObj);
-              }
-              return this.renderBtn(false, answer, indexAnswer, validAnswerObj);
+              const isCorrectAnswer = answer === correctAnswer;
+              return this.renderBtn(isCorrectAnswer, answer, indexAnswer, validAnswerObj);
             })
           }
         </div>
